@@ -149,11 +149,11 @@ RUN chmod +x /usr/local/bin/docker-php-entrypoint
 ###################################### ZENTAO ######################################
 
 RUN cd / \
-    && curl -fSL https://github.com/easysoft/zentaopms/archive/zentaopms_11.6.stable_20190712.tar.gz -o zentaopms.tar.gz \
-    && tar -zxvf zentaopms.tar.gz \
-    && rm -rf zentaopms.tar.gz \
+    && curl -fSL http://dl.cnezsoft.com/zentao/11.5.1/ZenTaoPMS.11.5.1.zip -o zentaopms.zip \
+    && unzip zentaopms.zip \
+    && rm -rf zentaopms.zip \
     && rm -rf app \
-    && mv zentaopms-zentaopms_11.6.stable_20190712 app
+    && mv zentaopms app
 
 WORKDIR /app
 
